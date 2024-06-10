@@ -1,6 +1,6 @@
 # GameStoreAPI
  My final project of my course, in collaboration with a great team.
- I will add some documentation in how to set up this 
+ I will add some documentation in how to set up this project.
  
  In this application we highlight the knowledge of our .NET and C# Syntax in the backend using Async API calls that are seperated in layers, meaning that if you would move this into a mobile UI, 90% of the code is already done.
 We also highlight our knowledge of SOLID principles, by applying them as much as we can where possible. This makes the code more readable, clean and open for extension.
