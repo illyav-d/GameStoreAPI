@@ -10,27 +10,25 @@ In the frontend we used Angular, NodeJS (nmp), Bootstrap and TypeScript to handl
 I would like to thank my partners in this project and would recommend you check them out here
 
 Gilles
-https://github.com/JustGilloo
-https://justgilloo.github.io
+https://github.com/JustGilloo - https://justgilloo.github.io
 
 Bart
-https://github.com/Bart-Nobels
-https://bart-nobels.github.io/
+https://github.com/Bart-Nobels - https://bart-nobels.github.io/
 
 # Program Setup
 If you want to try this project you need, visual studio code, visual studio enterprise,npm/ng and sql server management studio.
 All of these are free to download in the links below.
 
-S(QL)SMS
+S(QL)SMS - 
 https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16
 
-VS Enterprise
+VS Enterprise - 
 https://visualstudio.microsoft.com/vs/enterprise
 
-VS Code
+VS Code - 
 https://code.visualstudio.com
 
-npm/ng instructions
+npm/ng instructions - 
 https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
 Once set up, you can clone in your terminal using the git clone git@github.com:illyav-d/GameStoreAPI.git in your terminal application of choice or download the zip directly.
