@@ -1,0 +1,74 @@
+<div id="bg-img-home">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-center py-4">
+            <h3 class="px-3 py-3">Shopping Cart of {{currentUser.name}}!</h3>
+        </div>
+        <div class="card col-md-12 mx-2 my-2">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-4"><strong>Title</strong></div>
+                        <div class="col-md-2"><strong>Unit Price</strong></div>
+                        <div class="col-md-3"><strong>Quantity</strong></div>
+                        <div class="col-md-2"><strong>Total Price</strong></div>
+                        <div class="col-md-1"></div>
+                    </div>
+                </li>
+                @for (sCartItem of shoppingCartList; track sCartItem.id)
+                {
+                <li class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            {{sCartItem.gameProductName}}
+                        </div>
+                        <div class="col-md-2">
+                            {{sCartItem.gameProductPrice | currency:'EUR':true}}
+                        </div>
+                        <div class="col-md-3">
+                            <form [formGroup]="productForms[sCartItem.id]" class="d-flex">
+                                <input formControlName="cartItemAmount" type="number" min="1"
+                                    class="mx-1 small-number-box">
+                                <button id="filter" class="btn btn-primary custom-btn"
+                                    (click)="onEditCartItemAmount(sCartItem.id)">Update Quant</button>
+                            </form>
+                        </div>
+                        <div class="col-md-2">
+                            {{sCartItem.totalPrice | currency:'EUR':true}}
+                        </div>
+                        <div class="col-md-1">
+                            <button id="filter" class="btn btn-danger float-end"
+                                (click)="onRemoveProduct(sCartItem.id)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                                    <path
+                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                }
+                @empty {
+                <div class="container mt-5">
+                    <div class="alert alert-warning text-center" role="alert">
+                        <h4 class="alert-heading">No Items Found</h4>
+                        <p>We couldn't find any items in your cart.</p>
+                        <hr>
+                    </div>
+                </div>
+                }
+            </ul>
+        </div>
+        <div class="py-4">
+            <h5 *ngIf="shoppingCartList.length > 0" class="px-3"> Total of shopping cart :
+                <strong>{{currentUser.totalPriceOfCart
+                    |
+                    currency:'EUR':true}}!</strong>
+            </h5>
+            <button *ngIf="shoppingCartList.length > 0" id="filter" class="mx-3 btn btn-primary custom-btn mt-3"
+                (click)="onCheckOut(currentUser.id)">Checkout</button>
+        </div>
+    </div>
+</div>

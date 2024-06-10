@@ -1,0 +1,10 @@
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-group {
+  flex: 0 0 calc(50% - 1rem); /* Two items per row with some spacing */
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}

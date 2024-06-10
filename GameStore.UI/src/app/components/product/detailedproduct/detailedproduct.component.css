@@ -1,0 +1,19 @@
+.card {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.price-custom {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.stock-custom {
+    font-size: 12px;
+}
+
+.product-details-custom p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}

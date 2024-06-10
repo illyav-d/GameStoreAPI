@@ -1,0 +1,25 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Audiowide', sans-serif !important;
+}
+
+body {
+  min-height: 400px;
+  margin-bottom: 100px;
+  clear: both;
+  background-color: #fbeaeb;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.small-number-box {
+  width: 50px;
+}
+
+.custom-btn {
+  color: #fbeaeb;
+  background-color: #2f3c7e;
+}

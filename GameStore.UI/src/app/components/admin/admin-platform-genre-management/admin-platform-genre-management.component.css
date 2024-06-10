@@ -1,0 +1,11 @@
+.genre-container,
+.platform-container {
+  margin: 0 10px; /* Add some spacing between the containers */
+}
+
+@media (min-width: 768px) {
+  .genre-container,
+  .platform-container {
+    flex: 1; /* Make each container take up equal space */
+  }
+}

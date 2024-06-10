@@ -1,0 +1,36 @@
+<app-admin-header></app-admin-header>
+<div class="container ">
+    <div class="d-flex flex-wrap justify-content-center py-4">
+        <h1 class="">Product Management</h1>
+    </div>
+    <div class="form-group col-12">
+        <div class="d-flex flex-wrap">
+            @for (product of productList; track product.id)
+            {
+            <ul class="list-group col-4 ">
+                <li class="list-group-item   ">
+                    <p> ID: {{product.id}} </p>
+                    <p>Name:{{product.name}}</p>
+                    <div [formGroup]="productForms[product.id]">
+                        Active: {{product.active}} <input type="checkbox" formControlName="active"
+                            (change)="onToggleActive(product.id)">
+
+                        <form [formGroup]="productForms[product.id]" (ngSubmit)="onEditStock(product.id)">
+                            Stock: {{product.stock}} <input formControlName="stockAmount" type="number" min="0"
+                                placeholder="Enter new stock amount" class="small-number-box mx-3">
+                            <button id="filter" class="btn btn-primary " type="submit">Adjust Stock</button>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+            }
+        </div>
+        @if (productList.length >0) {
+        <div class="container d-flex justify-content-center align-items-center">
+            <button class="btn btn-warning btn-lg mx-2" (click)="previousPage()"
+                [disabled]="currentPage === 1">Previous</button>
+            <button class="btn btn-warning btn-lg mx-2" (click)="nextPage()" [disabled]="!hasMorePages">Next</button>
+        </div>
+        }
+        
+    </div>

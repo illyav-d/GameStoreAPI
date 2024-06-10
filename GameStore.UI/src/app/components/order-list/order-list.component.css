@@ -1,0 +1,14 @@
+.list-group-item p {
+    margin: 0;
+    padding: 0;
+    line-height: 2;
+}
+
+.custom-ordered-list {
+    list-style-type: disc;
+    padding-left: 30px;
+}
+
+.custom-ordered-list li {
+    margin-bottom: 5px;
+}

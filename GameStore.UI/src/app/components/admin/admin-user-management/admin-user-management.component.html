@@ -1,0 +1,36 @@
+<app-admin-header></app-admin-header>
+<div id="bg-img-home">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-center py-4">
+            <h3 class="px-3 py-3">User Management</h3>
+        </div>
+        <div class="card col-md-4 mx-auto my-2">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-6"><strong>Username</strong></div>
+                        <div class="col-md-6"><strong>Active</strong></div>
+                    </div>
+                </li>
+                @for (user of userList; track user.id)
+                {
+                <li class="list-group-item">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <p>{{user.name}}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <form>
+                                <div [formGroup]="userForms[user.id]">
+                                    {{user.active}} <input type="checkbox" formControlName="active"
+                                        (change)="onToggleActive(user.id)">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

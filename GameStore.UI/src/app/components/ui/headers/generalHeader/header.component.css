@@ -1,0 +1,40 @@
+/* Navbar */
+.navbar {
+  background-color: rgb(167, 21, 167);
+}
+
+.navbar-custom {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.nav-item .nav-link {
+  opacity: 85%;
+  transition: border-color 0.3s;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-item .nav-link:hover {
+  opacity: 100%;
+  font-weight: 500;
+}
+
+.nav-item-custom .nav-link-custom:hover {
+  border-bottom-color: #fbeaeb;
+  border-bottom-width: 3px;
+}
+
+.navbar-nav-custom {
+  flex: 1;
+  justify-content: flex-start;
+  /* Align items to the start of the flex container */
+}
+
+.nav-link-custom {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.custom-img {
+  height: 40px;
+  padding-right: 5%;
+}
